@@ -246,3 +246,25 @@ GameManager.prototype.findFarthestPosition = function (cell, vector) {
 GameManager.prototype.positionsEqual = function (first, second) {
   return first.x === second.x && first.y === second.y;
 };
+
+//splits tile and spawns 2 halved ones
+GameManager.prototype.splitTile = function(tile){
+  var num = tile.value/2;
+  var pos = this.tile.savePosition;
+  self.grid.removeTile(tile);
+  this.addHalvedTile(value);
+  var tile2 = new Tile(pos,value);
+  this.grid.insertTile(tile2);
+  
+  
+};
+
+//adds a tile whose value is half of original 
+GameManager.prototype.addHalvedTile = function (num) {
+  if (this.grid.cellsAvailable()) {
+    var value = num/2
+    var tile = new Tile(this.grid.randomAvailableCell(), value);
+
+    this.grid.insertTile(tile);
+  }
+};
