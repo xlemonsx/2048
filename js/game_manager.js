@@ -20,7 +20,7 @@ GameManager.prototype.restart = function () {
   this.setup();
 };
 
-// Keep playing after winning (allows going over 2048)
+// Keep playing after winning 
 GameManager.prototype.keepPlaying = function () {
   this.keepPlaying = true;
   this.actuator.continueGame(); // Clear the game won/lost message
@@ -65,14 +65,14 @@ GameManager.prototype.setup = function () {
 // Set up the initial tiles to start the game with
 GameManager.prototype.addStartTiles = function () {
   
-    this.add1024Tile();
+    this.addStartTile();
   
 };
 
-GameManager.prototype.add1024Tile = function () {
+GameManager.prototype.addStartTile = function () {
   if (this.grid.cellsAvailable()) {
     var value = 1024
-    var tile = new Tile(this.grid.randomAvailableCell(), 1024);
+    var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
   }
