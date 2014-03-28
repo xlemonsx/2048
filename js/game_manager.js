@@ -1,5 +1,5 @@
 function GameManager(size, InputManager, Actuator, StorageManager) {
-  this.size           = size; // Size of the grid
+  this.size           = size; 
   this.inputManager   = new InputManager;
   this.storageManager = new StorageManager;
   this.actuator       = new Actuator;
@@ -62,7 +62,7 @@ GameManager.prototype.setup = function () {
   this.actuate();
 };
 
-// Set up the initial tiles to start the game with
+// Set up the initial tiles 
 GameManager.prototype.addStartTiles = function () {
   
     this.addStartTile();
