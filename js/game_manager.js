@@ -164,7 +164,7 @@ GameManager.prototype.move = function (direction) {
 
 
           // Update the score
-          self.score += merged.value;
+          self.score += tile.value;
 
           
         } else {
