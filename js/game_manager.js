@@ -225,13 +225,17 @@ GameManager.prototype.buildTraversals = function (vector) {
 
 GameManager.prototype.findFarthestPosition = function (cell, vector) {
   var previous;
+  var distance = 0;
 
   // Progress towards the vector direction until an obstacle is found
   do {
     previous = cell;
     cell     = { x: previous.x + vector.x, y: previous.y + vector.y };
+    distance = distance + 1;
   } while (this.grid.withinBounds(cell) &&
            this.grid.cellAvailable(cell));
+           
+  this.wentFarthest(distance);
 
   return {
     farthest: previous,
@@ -240,7 +244,11 @@ GameManager.prototype.findFarthestPosition = function (cell, vector) {
 };
 
 
-
+GameManager.prototype.wentFarthest = function(distance){
+  if (distance = this.size)?
+  return true : return false;
+  
+};
 
 
 GameManager.prototype.positionsEqual = function (first, second) {
